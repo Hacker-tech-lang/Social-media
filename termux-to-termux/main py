@@ -1,0 +1,12 @@
+import os
+
+def main():
+    while True:
+        command = input("Enter command: ")
+        if command.lower() == 'exit':
+            break
+        os.system(command)
+
+if __name__ == "__main__":
+    main()
+  
