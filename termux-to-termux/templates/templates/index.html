@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termux Social Media</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .post { margin: 20px; padding: 10px; border: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+    <h1>Termux Social Media</h1>
+    <form action="/register" method="post">
+        <input type="text" name="username" placeholder="Enter your username" required>
+        <button type="submit">Register</button>
+    </form>
+    <form action="/post" method="post">
+        <input type="text" name="user" placeholder="Enter your username" required>
+        <input type="text" name="content" placeholder="What's on your mind?" required>
+        <button type="submit">Post</button>
+    </form>
+    <h2>Posts:</h2>
+    {% for post in posts %}
+        <div class="post">
+            <strong>{{ post.user }}</strong>: {{ post.content }}
+        </div>
+    {% endfor %}
+</body>
+</html>
+
